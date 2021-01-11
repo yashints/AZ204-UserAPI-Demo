@@ -1,7 +1,9 @@
-# Demos for AZ-204 Course
+# AZ204 User API Demo
 
-All the demos for the AZ-204 course
+This Web API project is built with ASP.Net Core 3.1 and can be used to demo App Services or APIM.
 
-## User API Demo
+## Tech Stack
 
-[The Users Web API demo](./Web%20API/README.md)
+* Asp.Net Core 3.1
+* EF in memory database
+* No auth required
