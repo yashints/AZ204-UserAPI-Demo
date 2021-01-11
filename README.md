@@ -7,3 +7,4 @@ This Web API project is built with ASP.Net Core 3.1 and can be used to demo App 
 * Asp.Net Core 3.1
 * EF in memory database
 * No auth required
+* Github actions for deployment
