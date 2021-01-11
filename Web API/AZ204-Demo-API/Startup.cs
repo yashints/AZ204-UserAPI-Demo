@@ -22,6 +22,8 @@ namespace AZ204_Demo_API
     {
       services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase(databaseName: "Users"));
 
+      services.AddSwaggerGen();
+
       services.AddControllers().AddNewtonsoftJson(options =>
         options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
       );
@@ -40,6 +42,13 @@ namespace AZ204_Demo_API
         var context = serviceScope.ServiceProvider.GetService<ApiContext>();
         SeedData.AddTestData(context);
       }
+
+      app.UseSwagger();
+      app.UseSwaggerUI(c =>
+      {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+        c.RoutePrefix = string.Empty;
+      });
 
       app.UseHttpsRedirection();
 
