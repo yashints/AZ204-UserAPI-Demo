@@ -22,7 +22,23 @@ namespace AZ204_Demo_API.Models
       {
         Id = "def234",
         UserId = testUser1.Id,
-        Content = "What a piece of junk!"
+        Content = "First post"
+      };
+      
+      var testUser2 = new User
+      {
+        Id = "abc124",
+        FirstName = "Dark",
+        LastName = "Vadar"
+      };
+
+      context.Users.Add(testUser2);
+
+      var testPost1 = new Post
+      {
+        Id = "def235",
+        UserId = testUser2.Id,
+        Content = "First post"
       };
 
       context.Posts.Add(testPost1);
